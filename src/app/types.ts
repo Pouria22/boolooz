@@ -15,3 +15,13 @@ export interface Order {
   status: string;
   order_items: OrderItem[];
 }
+
+export interface RefundData {
+  product_id: number;
+  image: string;
+  product_name: string;
+  price: number;
+  refundable: boolean;
+  brand: string;
+  qty: number;
+}
