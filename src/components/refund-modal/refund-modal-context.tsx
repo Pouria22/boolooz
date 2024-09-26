@@ -1,14 +1,14 @@
-'use client';
+"use client";
 
 import { useState } from "react";
-import { RefundData } from "../types";
-import Image from 'next/image';
+import { RefundData } from "../../types";
+import Image from "next/image";
 
 export default function RefundModalContext({
   image,
   product_name,
   brand,
-  qty
+  qty,
 }: RefundData) {
   const [selectedQty, setSelectedQty] = useState<number | null>(null);
   const [refundReason, setRefundReason] = useState<string>("");
@@ -42,7 +42,9 @@ export default function RefundModalContext({
         </div>
       </div>
 
-      <label htmlFor="qty" className="block mb-2 text-sm">تعداد</label>
+      <label htmlFor="qty" className="block mb-2 text-sm">
+        تعداد
+      </label>
       <select
         id="qty"
         className="w-full border-gray-300 rounded-lg mb-4 text-[#a3a3a3] focus:text-black border-2 px-1"
@@ -50,13 +52,19 @@ export default function RefundModalContext({
         onChange={handleQtyChange}
         aria-label="Select quantity"
       >
-        <option value="" disabled className="text-xs">تعداد مورد نظر خود را انتخاب کنید</option>
+        <option value="" disabled className="text-xs">
+          تعداد مورد نظر خود را انتخاب کنید
+        </option>
         {Array.from({ length: qty }, (_, i) => (
-          <option key={i} value={i + 1}>{i + 1}</option>
+          <option key={i} value={i + 1}>
+            {i + 1}
+          </option>
         ))}
       </select>
 
-      <label htmlFor="reason" className="block mb-2 text-sm">توضیحات مرجوعی</label>
+      <label htmlFor="reason" className="block mb-2 text-sm">
+        توضیحات مرجوعی
+      </label>
       <textarea
         id="reason"
         rows={4}
@@ -65,11 +73,15 @@ export default function RefundModalContext({
         onChange={handleReasonChange}
         placeholder="توضیحات مرتبط به دلیل مرجوعی را بنویسید"
         aria-label="Refund reason"
-        style={{ borderColor: '#a3a3a3' }}
+        style={{ borderColor: "#a3a3a3" }}
       ></textarea>
 
       <button
-        className={`w-full py-2 rounded-lg ${isFormValid ? 'bg-[#FB923C] text-white' : 'bg-gray-300 text-[#a3a3a3] cursor-not-allowed'}`}
+        className={`w-full py-2 rounded-lg ${
+          isFormValid
+            ? "bg-[#FB923C] text-white"
+            : "bg-gray-300 text-[#a3a3a3] cursor-not-allowed"
+        }`}
         disabled={!isFormValid}
       >
         ثبت
