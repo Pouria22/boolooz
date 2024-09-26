@@ -5,11 +5,13 @@ import ErrorMessage from "@/components/error-message";
 import { NotFound } from "@/components/not-found";
 import Modal from "@/components/modal";
 
-export default async function OrderedRefund({
-  params,
-}: {
-  params: { orderNumber: string; productId: string };
-}) {
+export type Props = {
+  params: {
+    orderNumber: string;
+    productId: string;
+  }
+};
+export default async function OrderedRefund({params: {orderNumber, productId}}: Props) {
   const endpoint = `/orders/`;
   const { data, error } = await fetchWrapper<Order[]>(endpoint);
 
@@ -17,11 +19,11 @@ export default async function OrderedRefund({
     return <ErrorMessage message={error} />;
   }
   const orderData = data?.find(
-    (o: Order) => o.order_number === params?.orderNumber
+    (o: Order) => o.order_number === orderNumber
   );
 
   const refundData = orderData?.order_items.find(
-    (r) => r.product_id === Number(params.productId)
+    (r) => r.product_id === Number(productId)
   );
 
   if (!orderData) {
@@ -34,7 +36,7 @@ export default async function OrderedRefund({
 
   return (
     <Modal>
-      <RefundModalContext {...refundData} />
+      <RefundModalContext {...refundData} />)
     </Modal>
   );
 }

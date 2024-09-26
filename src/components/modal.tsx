@@ -2,7 +2,6 @@
 
 import { useRouter } from "next/navigation";
 import { ReactNode, useEffect, useRef } from "react";
-import { createPortal } from "react-dom";
 
 interface ModalProps {
   children: ReactNode;
@@ -20,8 +19,7 @@ export default function Modal({ children }: ModalProps) {
   function onModalHide() {
     router.back();
   }
-
-  return createPortal(
+  return (
     <dialog
       ref={modalRef}
       className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50"
@@ -41,7 +39,6 @@ export default function Modal({ children }: ModalProps) {
         </div>
         {children}
       </div>
-    </dialog>,
-    document.getElementById("modal-root-id")!
+    </dialog>
   );
 }

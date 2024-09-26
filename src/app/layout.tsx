@@ -9,12 +9,14 @@ export const metadata: Metadata = {
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode;
+  children: React.ReactNode
 }) {
   return (
     <html lang="fa" dir="rtl">
       <body>
-        <main>{children}</main>
+        <main>
+          {children}
+        </main>
       </body>
     </html>
   );
