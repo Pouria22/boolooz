@@ -6,11 +6,13 @@ import ErrorMessage from "@/components/error-message";
 import { Stepper } from "@/components/stepper/stepper";
 import { NotFound } from "@/components/not-found";
 
-export default async function Page({
-  params,
-}: {
-  params: { orderNumber: string };
-}) {
+export type Props = {
+  params: {
+    orderNumber: string;
+  }
+}
+
+export default async function Page({params: {orderNumber}}: Props) {
   const endpoint = `/orders/`;
   const { data, error } = await fetchWrapper<Order[]>(endpoint);
 
@@ -19,7 +21,7 @@ export default async function Page({
   }
 
   const orderData = data?.find(
-    (o: Order) => o.order_number === params.orderNumber
+    (o: Order) => o.order_number === orderNumber
   );
   return (
     <main className="min-h-screen flex flex-col bg-white text-gray-800 rtl">
@@ -29,7 +31,7 @@ export default async function Page({
           <>
             <OrderDetailList
               items={orderData?.order_items}
-              orderNumber={params.orderNumber}
+              orderNumber={orderNumber}
             />
             <Sidebar order={orderData} />
           </>

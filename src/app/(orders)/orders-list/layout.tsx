@@ -9,12 +9,15 @@ const iranSansFont = localFont({
 
 export default function RootLayout({
   children,
+  modal,
 }: {
   children: React.ReactNode;
+  modal: React.ReactNode
 }) {
   return (
     <div className={iranSansFont.className}>
       <Header />
+      {modal}
       <main>{children}</main>
       <Footer />
     </div>

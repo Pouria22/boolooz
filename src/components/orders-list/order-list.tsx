@@ -1,4 +1,5 @@
 import { Order } from "../../types";
+import { NotFound } from "../not-found";
 import OrderListItem from "./order-list-item";
 
 export default function OrderList({ orders }: { orders: Order[] }) {
@@ -10,9 +11,7 @@ export default function OrderList({ orders }: { orders: Order[] }) {
             <OrderListItem key={order.order_id} order={order} />
           ))
         ) : (
-          <p className="col-span-2 text-center text-gray-500">
-            No orders found.
-          </p>
+          <NotFound text={'سفارشی پیدا نشد'} />
         )}
       </div>
     </div>

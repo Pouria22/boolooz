@@ -23,7 +23,6 @@ export default function RefundModalContext({
   const handleReasonChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     setRefundReason(e.target.value);
   };
-
   return (
     <div className="bg-white rounded-lg p-10 w-full max-w-md">
       <div className="flex items-center mb-4">

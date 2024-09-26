@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Order, OrderItem } from "../../types";
+import { NotFound } from "../not-found";
 
 interface OrderItemProps {
   order: Order;
@@ -59,7 +60,7 @@ function OrderDate({ createdAt }: { createdAt: Date }) {
 
 function OrderItems({ items }: { items: OrderItem[] }) {
   if (!items || items.length === 0) {
-    return <p className="text-gray-500">No items found.</p>;
+    return <NotFound text={'آیتمی پیدا نشد'} />
   }
 
   return (
