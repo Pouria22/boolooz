@@ -1,36 +1,30 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Order Management Application
 
-## Getting Started
+This project is built with **Next.js 14** and **Tailwind CSS**, using **pnpm** as the package manager. The application allows users to manage their orders efficiently, providing an interface to view, detail, and refund orders.
 
-First, run the development server:
+## Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **User Orders Page**: Displays a comprehensive list of all orders placed by the user.
+- **Order Details Page**: Users can click on an order to view detailed information, including item descriptions and order status.
+- **Refund Functionality**: Users can initiate refunds for specific items in their orders.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Technologies Used
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Next.js 14**: A React framework for building server-side rendered and statically generated applications.
+- **Tailwind CSS**: A utility-first CSS framework that facilitates responsive and customizable styling.
+- **pnpm**: A fast, disk space-efficient package manager that improves installation speed.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Installation
 
-## Learn More
+To set up the project locally, follow these steps:
 
-To learn more about Next.js, take a look at the following resources:
+1. **Clone the repository**:
+   ```bash
+   git clone <your-repository-url>
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+   cd <your-project-directory>
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+   pnpm install
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+   pnpm dev
+   ```
